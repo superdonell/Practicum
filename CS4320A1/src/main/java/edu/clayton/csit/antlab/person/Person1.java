@@ -30,8 +30,11 @@ public class Person1 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 1 put your implementation here
-	  return null;
+		  if (input == null || input.length() < 2) {
+			    return input;  // Nothing to do here
+			  }
+			  return input.substring(2) + input.substring(0, 2);
+			  //Returns the switched letters
 	}
 	
 	/**
