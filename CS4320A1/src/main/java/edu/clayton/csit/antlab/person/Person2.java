@@ -1,4 +1,5 @@
 package edu.clayton.csit.antlab.person;
+import java.util.Random;
 
 /**
  *  A simple class for person 2
@@ -30,8 +31,21 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+    	if (input == null || input.isEmpty()) {
+        return input;
+    }
+
+    char[] characters = input.toCharArray();
+    Random random = new Random();
+
+    for (int i = 0; i < characters.length; i++) {
+        int randomIndexToSwap = random.nextInt(characters.length);
+        char temp = characters[i];
+        characters[i] = characters[randomIndexToSwap];
+        characters[randomIndexToSwap] = temp;
+    }
+
+    	return new String(characters);
 	}
 	/**
 	 * Return a string rep of this object
